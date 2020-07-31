@@ -13,7 +13,18 @@ todo_list.append(todo)
 print(todo_list)
 
 # TODO - Ask the user if they want to add more TODOs, check some off, or exit the app
-    # TODO - Give user ability to add more TODOs
-    # TODO - Give user ability to check off TODOs
-    # TODO - Give user ability to exit app from menu
-# TODO - Give user ability to sort TODOs by date, alphabetically, etc.
+
+user_choice = ''
+while user_choice != 'exit':
+    user_choice = input("Enter '1' to add more TODOs, '2' to check off TODOs, or 'exit' to exit the app.     ")
+    if user_choice == '1':
+        todo = input("Please enter a TODO to add to your list.     ")
+        todo_list.append(todo)
+    elif user_choice == '2':
+        print(todo_list)
+        print("Please enter the number of the TODO item to check off")
+        todo_num = input("Only enter in a number. e.g. '1', '3', or '7'     ")
+        todo_num = int(todo_num)
+        todo_list.pop(todo_num - 1)
+        print(todo_list)
+    
